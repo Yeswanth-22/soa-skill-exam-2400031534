@@ -33,17 +33,18 @@ public class FeedbackRepositoryTest {
 	}
 	@Test
 	void testFindByName() {
-		List<Feedback> user=repo.findByName("yeswanth");
+		List<Feedback> user=repo.findByName("Yeswanth");
 		assertNotNull(user);
-		assertEquals("yeswanth", user.get(1).getName());
-		System.out.println("Name :"+user.get(1).getName());
+		
+		assertEquals("Yeswanth", user.get(0).getName());
+		System.out.println("Name :"+user.get(0).getName());
 		
 	}
 	@Test
 	void testFindById() {
 		Optional<Feedback> user=repo.findById(1L);
 		assertTrue(user.isPresent());
-		assertEquals(9L, user.get().getId());
+		assertEquals(1L, user.get().getId());
 		System.out.println("Name :"+user.get().getName());
 		System.out.println("status :"+user.get().getStatus());
 	}
